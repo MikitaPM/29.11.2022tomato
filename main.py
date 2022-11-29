@@ -13,6 +13,27 @@ class Tomato:
         if self.state() == 3:
             return True
         return False
+class TomatoBush(Tomato):
+    def __init__(self, count):
+        self.tamatoes = [Tomato(index) for index in range(1, count +1)]
+    def grow_all(self):
+        print('Помидор растет')
+        for i in self.tamatoes:
+            i.grow()
+    def all_are_ripe(self):
+        for i in self.tamatoes:
+            if not i.is_ripe():
+                print('Помидор не созрел')
+            break
+        else:
+            print('Все помидоры созрели')
+
+
+
+
+
+
+
 
 
 
